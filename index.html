@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>미래코칭경영원 | 전문코치 양성 · ACPK 기반 코칭교육 · 진단 및 검사</title>
+  <meta name="description" content="미래코칭경영원은 한국코치협회 ACPK 기반 전문코치 양성 교육, 실습 중심 코칭 프로그램, 진단 및 검사 기반 성장 지원을 제공합니다." />
+  <meta name="keywords" content="미래코칭경영원, 전문코치 양성, 코칭교육, ACPK, KAC, 리더십 코칭, 조직 코칭, MBTI, 에니어그램, 버크만, 진단 코칭" />
+  <meta name="theme-color" content="#7B2E2F" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="미래코칭경영원 | 전문코치 양성 · ACPK 기반 코칭교육 · 진단 및 검사" />
+  <meta property="og:description" content="코치다운 코치를 양성합니다. ACPK 기반 전문 교육과 실습 중심 성장 프로그램." />
+  <meta property="og:locale" content="ko_KR" />
+  <style>
+    :root {
+      --primary: #7b2e2f;
+      --primary-dark: #5e2022;
+      --primary-soft: #f7efef;
+      --secondary: #6d6a67;
+      --accent: #c6a96b;
+      --accent-green: #4d7c66;
+      --bg: #fcfaf8;
+      --white: #ffffff;
+      --text: #1e1c1b;
+      --muted: #6d6a67;
+      --line: #e7ddd8;
+      --card: #fffdfb;
+      --shadow: 0 18px 40px rgba(37, 22, 20, 0.08);
+      --radius: 20px;
+      --container: 1180px;
+      --header-h: 78px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    .container { width: min(calc(100% - 40px), var(--container)); margin: 0 auto; }
+    .section { padding: 100px 0; position: relative; }
+    .section-head { max-width: 760px; margin-bottom: 42px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; color: var(--primary);
+      font-weight: 700; letter-spacing: 0.02em; margin-bottom: 14px; font-size: .95rem;
+    }
+    .eyebrow::before {
+      content: ""; width: 10px; height: 10px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+    }
+    h1, h2, h3, h4, p { margin: 0; }
+    h2 { font-size: clamp(2rem, 3vw, 3rem); line-height: 1.2; margin-bottom: 14px; letter-spacing: -0.03em; }
+    .section-desc { color: var(--muted); font-size: 1.05rem; }
+    .grid { display: grid; gap: 24px; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 14px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 52px; padding: 0 24px; border-radius: 999px; border: 1px solid transparent;
+      font-weight: 700; transition: .25s ease; cursor: pointer; white-space: nowrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--white); box-shadow: 0 12px 28px rgba(123, 46, 47, .28);
+    }
+    .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.03); }
+    .btn-secondary {
+      background: rgba(255,255,255,.76); color: var(--primary);
+      border-color: rgba(123,46,47,.16); backdrop-filter: blur(12px);
+    }
+    .btn-secondary:hover { transform: translateY(-2px); background: #fff; }
+    .btn-outline { border-color: rgba(255,255,255,.3); color: #fff; background: transparent; }
+    .btn-outline:hover { background: rgba(255,255,255,.08); }
+    .chip-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .chip {
+      padding: 10px 16px; border-radius: 999px; background: rgba(255,255,255,.78);
+      border: 1px solid rgba(123,46,47,.12); color: var(--primary); font-weight: 700; font-size: .95rem;
+    }
+    .site-header {
+      position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(14px);
+      background: rgba(252,250,248,.86); border-bottom: 1px solid rgba(123,46,47,.08);
+    }
+    .header-inner { height: var(--header-h); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 14px; font-weight: 800; color: var(--primary); letter-spacing: -0.02em; }
+    .brand-mark {
+      width: 42px; height: 42px; border-radius: 14px; background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: grid; place-items: center; color: #fff; font-weight: 900; box-shadow: 0 12px 24px rgba(123,46,47,.18);
+    }
+    .nav { display: flex; align-items: center; gap: 26px; }
+    .nav a { color: var(--secondary); font-weight: 600; position: relative; transition: color .2s ease; }
+    .nav a:hover, .nav a.active { color: var(--primary); }
+    .nav a.active::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: -10px; height: 2px; background: var(--primary); border-radius: 999px;
+    }
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+    .mobile-toggle {
+      display: none; width: 46px; height: 46px; border: 1px solid rgba(123,46,47,.14); background: #fff;
+      border-radius: 14px; cursor: pointer; position: relative;
+    }
+    .mobile-toggle span, .mobile-toggle::before, .mobile-toggle::after {
+      content: ""; position: absolute; left: 12px; right: 12px; height: 2px; background: var(--primary); border-radius: 999px; transition: .25s ease;
+    }
+    .mobile-toggle span { top: 22px; }
+    .mobile-toggle::before { top: 15px; }
+    .mobile-toggle::after { top: 29px; }
+    .mobile-toggle.open span { opacity: 0; }
+    .mobile-toggle.open::before { top: 22px; transform: rotate(45deg); }
+    .mobile-toggle.open::after { top: 22px; transform: rotate(-45deg); }
+    .mobile-drawer { display: none; border-top: 1px solid rgba(123,46,47,.08); background: rgba(252,250,248,.98); }
+    .mobile-drawer-inner { display: grid; gap: 10px; padding: 18px 0 24px; }
+    .mobile-drawer a {
+      padding: 14px 16px; border-radius: 14px; background: #fff; border: 1px solid rgba(123,46,47,.08); color: var(--secondary); font-weight: 700;
+    }
+    .hero {
+      padding: 88px 0 72px; position: relative; overflow: hidden;
+      background: radial-gradient(circle at 15% 20%, rgba(198,169,107,.18), transparent 28%),
+                  radial-gradient(circle at 85% 15%, rgba(77,124,102,.14), transparent 26%),
+                  linear-gradient(180deg, #fff 0%, #fcfaf8 100%);
+    }
+    .hero::before, .hero::after {
+      content: ""; position: absolute; border-radius: 50%; filter: blur(20px); opacity: .45; pointer-events: none;
+    }
+    .hero::before { width: 380px; height: 380px; right: -80px; top: -40px; background: rgba(123,46,47,.1); }
+    .hero::after { width: 260px; height: 260px; left: -80px; bottom: -60px; background: rgba(198,169,107,.12); }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 42px; align-items: center; }
+    .hero-copy .eyebrow { margin-bottom: 18px; }
+    .hero-title { font-size: clamp(2.6rem, 5vw, 4.8rem); line-height: 1.08; letter-spacing: -0.05em; margin-bottom: 18px; }
+    .hero-title strong { color: var(--primary); }
+    .hero-desc { font-size: 1.14rem; color: var(--muted); max-width: 640px; margin-bottom: 28px; }
+    .hero-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+    .metric {
+      background: rgba(255,255,255,.86); border: 1px solid rgba(123,46,47,.1); border-radius: 18px; padding: 18px; box-shadow: var(--shadow);
+    }
+    .metric strong { display: block; color: var(--primary); font-size: 1.1rem; margin-bottom: 4px; }
+    .metric span { display: block; color: var(--muted); font-size: .94rem; }
+    .hero-visual { position: relative; min-height: 560px; }
+    .visual-panel {
+      position: absolute; inset: 0; border-radius: 34px; overflow: hidden; box-shadow: var(--shadow);
+      background: linear-gradient(135deg, rgba(123,46,47,.94), rgba(94,32,34,.92)); color: #fff;
+      padding: 34px; display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .visual-panel::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(circle at 20% 22%, rgba(255,255,255,.13), transparent 16%),
+                  radial-gradient(circle at 80% 18%, rgba(198,169,107,.24), transparent 18%),
+                  radial-gradient(circle at 70% 85%, rgba(255,255,255,.1), transparent 20%);
+      pointer-events: none;
+    }
+    .visual-badge {
+      position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 10px; width: fit-content;
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: 10px 16px; font-weight: 700;
+    }
+    .visual-main { position: relative; z-index: 1; display: grid; gap: 18px; max-width: 460px; }
+    .visual-main h3 { font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.2; letter-spacing: -0.03em; }
+    .visual-main p { color: rgba(255,255,255,.84); }
+    .floating-card {
+      position: absolute; background: rgba(255,255,255,.92); backdrop-filter: blur(10px); border-radius: 22px;
+      box-shadow: 0 20px 40px rgba(22,15,14,.14); border: 1px solid rgba(123,46,47,.08); color: var(--text);
+    }
+    .floating-card.small { right: -18px; top: 60px; width: 230px; padding: 18px; }
+    .floating-card.large { left: -18px; bottom: 38px; width: 260px; padding: 20px; }
+    .floating-card h4 { color: var(--primary); font-size: 1rem; margin-bottom: 6px; }
+    .floating-card p { color: var(--muted); font-size: .95rem; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .about-grid { grid-template-columns: 1.2fr .8fr; align-items: start; }
+    .about-copy { padding: 34px; }
+    .about-copy h3 { font-size: 1.5rem; margin-bottom: 14px; color: var(--primary); }
+    .about-copy p + p { margin-top: 14px; color: var(--muted); }
+    .philosophy-list { display: grid; gap: 14px; margin-top: 26px; }
+    .philosophy-item { display: flex; gap: 14px; align-items: flex-start; padding: 18px; border-radius: 16px; background: #fff; border: 1px solid rgba(123,46,47,.08); }
+    .philosophy-num {
+      min-width: 36px; height: 36px; border-radius: 12px; background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff; display: grid; place-items: center; font-weight: 800;
+    }
+    .about-side { padding: 34px; background: linear-gradient(180deg, #fff, #faf4ef); }
+    .about-side h3 { margin-bottom: 18px; font-size: 1.45rem; }
+    .why-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 24px; }
+    .why-card { padding: 24px; background: #fff; border: 1px solid rgba(123,46,47,.08); border-radius: 18px; transition: transform .25s ease, border-color .25s ease; }
+    .why-card:hover { transform: translateY(-4px); border-color: rgba(123,46,47,.18); }
+    .icon-badge {
+      width: 50px; height: 50px; border-radius: 16px; display: grid; place-items: center;
+      background: linear-gradient(135deg, rgba(123,46,47,.12), rgba(198,169,107,.2)); color: var(--primary);
+      font-size: 1.2rem; margin-bottom: 16px; font-weight: 900;
+    }
+    .why-card h4, .feature-card h4, .diagnosis-card h4, .testimonial-card h4 { font-size: 1.08rem; margin-bottom: 8px; }
+    .why-card p, .feature-card p, .diagnosis-card p, .testimonial-card p { color: var(--muted); font-size: .97rem; }
+    .coach-grid { grid-template-columns: repeat(4, 1fr); }
+    .coach-card { padding: 24px; cursor: pointer; transition: transform .25s ease, box-shadow .25s ease; }
+    .coach-card:hover { transform: translateY(-6px); box-shadow: 0 22px 44px rgba(37,22,20,.12); }
+    .avatar {
+      width: 86px; height: 86px; border-radius: 50%; display: block; object-fit: cover;
+      margin-bottom: 18px; background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 12px 24px rgba(123,46,47,.2); border: 3px solid rgba(255,255,255,.88);
+    }
+    .modal-avatar {
+      width: 120px; height: 120px; border-radius: 50%; object-fit: cover; display: block;
+      box-shadow: 0 12px 28px rgba(123,46,47,.18); border: 4px solid rgba(255,255,255,.92);
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+    }
+    .coach-name { font-size: 1.18rem; margin-bottom: 6px; }
+    .coach-role { color: var(--primary); font-weight: 700; margin-bottom: 14px; font-size: .95rem; }
+    .coach-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tag { display: inline-flex; align-items: center; min-height: 32px; padding: 0 12px; border-radius: 999px; background: var(--primary-soft); color: var(--primary); font-size: .88rem; font-weight: 700; }
+    .program-layout { display: grid; grid-template-columns: .95fr 1.05fr; gap: 28px; align-items: start; }
+    .program-intro, .timeline-panel, .followup-panel { padding: 30px; }
+    .program-title { font-size: 1.65rem; color: var(--primary); margin-bottom: 12px; }
+    .feature-grid { grid-template-columns: repeat(2, 1fr); margin-top: 24px; }
+    .feature-card { padding: 22px; }
+    .timeline { position: relative; display: grid; gap: 18px; margin-top: 8px; }
+    .timeline::before { content: ""; position: absolute; left: 18px; top: 12px; bottom: 12px; width: 2px; background: linear-gradient(180deg, var(--primary), rgba(123,46,47,.1)); }
+    .timeline-item { position: relative; display: grid; grid-template-columns: 50px 1fr; gap: 18px; align-items: start; }
+    .timeline-dot {
+      width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; font-size: .9rem; font-weight: 800; z-index: 1; margin-left: -1px;
+    }
+    .timeline-content { background: #fff; border: 1px solid rgba(123,46,47,.08); border-radius: 16px; padding: 16px 18px; }
+    .timeline-content strong { display: block; margin-bottom: 4px; }
+    .timeline-content span { color: var(--muted); font-size: .95rem; }
+    .followup-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 20px; }
+    .followup-item { background: #fff; border: 1px solid rgba(123,46,47,.08); border-radius: 16px; padding: 18px; font-weight: 700; color: var(--primary); }
+    .diagnosis-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+    .tab-btn {
+      border: 1px solid rgba(123,46,47,.12); background: #fff; color: var(--secondary);
+      padding: 12px 18px; border-radius: 999px; font-weight: 700; cursor: pointer; transition: .25s ease;
+    }
+    .tab-btn.active, .tab-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .diagnosis-grid { grid-template-columns: repeat(2, 1fr); }
+    .diagnosis-card { padding: 26px; display: flex; flex-direction: column; gap: 12px; }
+    .diagnosis-type { display: inline-flex; width: fit-content; min-height: 30px; align-items: center; padding: 0 12px; border-radius: 999px; background: rgba(77,124,102,.12); color: var(--accent-green); font-size: .84rem; font-weight: 800; }
+    .diagnosis-coach { color: var(--primary); font-weight: 700; font-size: .95rem; }
+    .testimonial-wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; }
+    .testimonial-lead { padding: 34px; color: #fff; background: linear-gradient(135deg, var(--primary), #8f4747); overflow: hidden; position: relative; }
+    .testimonial-lead::before { content: "“"; position: absolute; top: 14px; right: 24px; font-size: 7rem; line-height: 1; opacity: .1; font-family: Georgia, serif; }
+    .testimonial-lead h3 { font-size: 1.7rem; margin-bottom: 14px; line-height: 1.3; }
+    .testimonial-lead p { color: rgba(255,255,255,.86); }
+    .testimonial-grid { display: grid; gap: 18px; }
+    .testimonial-card { padding: 24px; }
+    .testimonial-meta { margin-top: 16px; color: var(--primary); font-weight: 700; font-size: .92rem; }
+    .cta-banner { background: linear-gradient(135deg, #fff, #faf3ee); padding: 34px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+    .cta-banner h3 { font-size: clamp(1.5rem, 2.4vw, 2.1rem); margin-bottom: 8px; }
+    .cta-banner p { color: var(--muted); }
+    .contact-layout { display: grid; grid-template-columns: .88fr 1.12fr; gap: 24px; align-items: start; }
+    .contact-info, .contact-form-wrap { padding: 34px; }
+    .contact-info { background: linear-gradient(180deg, #fff, #faf3ee); }
+    .contact-points { display: grid; gap: 18px; margin-top: 28px; }
+    .contact-point { padding: 18px; background: #fff; border: 1px solid rgba(123,46,47,.08); border-radius: 16px; }
+    .contact-point strong { display: block; color: var(--primary); margin-bottom: 6px; }
+    .contact-form { display: grid; gap: 18px; }
+    .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .field { display: grid; gap: 8px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: .95rem; font-weight: 700; color: var(--text); }
+    .field input, .field select, .field textarea {
+      width: 100%; border: 1px solid #d9ccc6; border-radius: 14px; background: #fff; min-height: 52px;
+      padding: 14px 16px; outline: none; transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .field textarea { min-height: 150px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(123,46,47,.08); }
+    .form-note { color: var(--muted); font-size: .92rem; }
+    .form-status { min-height: 24px; font-size: .95rem; font-weight: 700; }
+    .form-status.success { color: var(--accent-green); }
+    .form-status.error { color: #b42318; }
+    .site-footer { padding: 36px 0 48px; border-top: 1px solid rgba(123,46,47,.08); background: #fff; }
+    .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+    .footer-brand h3 { color: var(--primary); margin-bottom: 8px; }
+    .footer-brand p, .footer-nav a { color: var(--muted); }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: 14px 18px; justify-content: flex-end; }
+    .modal {
+      position: fixed; inset: 0; z-index: 1200; display: none; align-items: center; justify-content: center;
+      padding: 24px; background: rgba(20,16,15,.52); backdrop-filter: blur(6px);
+    }
+    .modal.show { display: flex; }
+    .modal-dialog { width: min(100%, 760px); background: #fff; border-radius: 28px; box-shadow: 0 30px 70px rgba(0,0,0,.2); overflow: hidden; position: relative; }
+    .modal-top { display: grid; grid-template-columns: 120px 1fr; gap: 22px; padding: 32px; background: linear-gradient(135deg, #fff, #faf3ee); border-bottom: 1px solid rgba(123,46,47,.08); }
+    .modal-body { padding: 28px 32px 32px; display: grid; gap: 18px; }
+    .modal-close { position: absolute; top: 18px; right: 18px; width: 42px; height: 42px; border-radius: 50%; border: none; background: rgba(123,46,47,.08); color: var(--primary); font-size: 1.25rem; cursor: pointer; }
+    .modal-section h4 { color: var(--primary); margin-bottom: 8px; font-size: 1rem; }
+    .modal-section p { color: var(--muted); }
+    .modal-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+    @media (max-width: 1120px) {
+      .hero-grid, .about-grid, .program-layout, .testimonial-wrap, .contact-layout { grid-template-columns: 1fr; }
+      .coach-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-visual { min-height: 500px; }
+      .cta-banner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 860px) {
+      .nav, .header-actions .desktop-only { display: none; }
+      .mobile-toggle { display: inline-block; }
+      .mobile-drawer.open { display: block; }
+      .hero { padding-top: 56px; }
+      .hero-metrics, .why-grid, .feature-grid, .diagnosis-grid, .form-grid, .followup-list { grid-template-columns: 1fr; }
+      .coach-grid { grid-template-columns: 1fr; }
+      .floating-card.small, .floating-card.large { position: static; width: 100%; }
+      .hero-visual { min-height: auto; display: grid; gap: 16px; }
+      .visual-panel { position: relative; min-height: 380px; }
+      .modal-top { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-nav { justify-content: flex-start; }
+    }
+    @media (max-width: 640px) {
+      :root { --header-h: 72px; }
+      .section { padding: 78px 0; }
+      .container { width: min(calc(100% - 24px), var(--container)); }
+      .hero-title { font-size: 2.3rem; }
+      .about-copy, .about-side, .program-intro, .timeline-panel, .followup-panel, .contact-info, .contact-form-wrap, .testimonial-lead, .cta-banner { padding: 24px; }
+      .btn { width: 100%; }
+      .btn-row { display: grid; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="미래코칭경영원 홈">
+        <span class="brand-mark">미</span>
+        <span>미래코칭경영원</span>
+      </a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="#about">회사소개</a>
+        <a href="#coaches">전문코치</a>
+        <a href="#program">교육과정</a>
+        <a href="#diagnosis">진단 및 검사</a>
+        <a href="#contact">문의하기</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#contact" class="btn btn-primary desktop-only">교육 문의</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="모바일 메뉴 열기" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="container mobile-drawer-inner">
+        <a href="#about">회사소개</a>
+        <a href="#coaches">전문코치</a>
+        <a href="#program">교육과정</a>
+        <a href="#diagnosis">진단 및 검사</a>
+        <a href="#contact">문의하기</a>
+        <a href="#contact" class="btn btn-primary" style="margin-top:8px;">교육 문의</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">코치다운 코치를 양성합니다</div>
+          <h1 class="hero-title"><strong>전문코치의 성장</strong>을<br />함께합니다</h1>
+          <p class="hero-desc">한국코치협회 ACPK 기반 코칭교육과 전문 진단·실습 중심의 성장 프로그램으로 개인과 조직의 변화, 그리고 지속 가능한 코칭 문화를 지원합니다.</p>
+          <div class="btn-row">
+            <a href="#program" class="btn btn-primary">교육과정 보기</a>
+            <a href="#contact" class="btn btn-secondary">상담 문의하기</a>
+          </div>
+          <div class="chip-list" aria-label="신뢰 요소">
+            <span class="chip">ACPK 기반 교육</span>
+            <span class="chip">실습 중심 커리큘럼</span>
+            <span class="chip">전문코치진 운영</span>
+            <span class="chip">멘토코칭 지원</span>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric"><strong>전문 교육</strong><span>체계적인 코칭 역량 개발</span></div>
+            <div class="metric"><strong>진단 기반 성장</strong><span>개인과 조직을 입체적으로 이해</span></div>
+            <div class="metric"><strong>Follow-up 지원</strong><span>교육 이후에도 이어지는 성장</span></div>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="visual-panel">
+            <div class="visual-badge">미래코칭경영원 공식 프로그램</div>
+            <div class="visual-main">
+              <h3>코칭의 본질을 배우고<br />현장에서 실천하는 힘을 기릅니다</h3>
+              <p>처음 코칭을 배우는 입문자부터 전문코치로 성장하고 싶은 분, 조직 안에서 코칭 문화를 확산하고 싶은 담당자까지 함께합니다.</p>
+              <div class="btn-row"><a href="#coaches" class="btn btn-outline">전문코치 보기</a></div>
+            </div>
+          </div>
+          <div class="floating-card small"><h4>실습 중심 교육</h4><p>배운 내용을 실제 코칭 대화와 피드백으로 연결합니다.</p></div>
+          <div class="floating-card large"><h4>ACPK 기반 커리큘럼</h4><p>코칭 윤리, 자기인식, 적극경청, 핵심질문, 피드백, 종합실습까지 단계적으로 성장합니다.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">회사소개</div>
+          <h2>코칭의 본질을 배우고, 성장의 문화를 만듭니다</h2>
+          <p class="section-desc">미래코칭경영원은 전문코치 양성과 코칭문화 확산을 목표로 하는 교육기관입니다. 코칭을 기술 이전이 아닌 사람의 가능성을 발견하고 성장을 설계하는 전문적 실천으로 바라봅니다.</p>
+        </div>
+        <div class="grid about-grid">
+          <div class="card about-copy reveal">
+            <h3>미래코칭경영원 소개</h3>
+            <p>미래코칭경영원은 코치로서의 태도와 정체성을 함께 세우는 교육을 지향합니다. 단순한 지식 전달이 아니라 실제 삶과 현장에서 적용되는 코칭 역량을 기르도록 돕습니다.</p>
+            <p>개인의 성장, 커리어 전환, 조직의 리더십과 문화 변화까지 폭넓게 연결되는 코칭 경험을 제공하며, 실습과 피드백, 사후 지원을 통해 배움이 실제 변화로 이어지도록 설계합니다.</p>
+            <div class="philosophy-list">
+              <div class="philosophy-item"><div class="philosophy-num">1</div><div><strong>코치로서의 삶을 배운다</strong><p>기술 이전에 코치다운 태도와 존재 방식을 함께 훈련합니다.</p></div></div>
+              <div class="philosophy-item"><div class="philosophy-num">2</div><div><strong>코칭 핵심기술을 습득한다</strong><p>적극경청, 핵심질문, 피드백, 대화모델 등 실제 역량을 체계적으로 익힙니다.</p></div></div>
+              <div class="philosophy-item"><div class="philosophy-num">3</div><div><strong>성장 중심 코칭 문화를 확산한다</strong><p>개인과 조직 모두의 변화가 지속되도록 코칭 문화를 지원합니다.</p></div></div>
+            </div>
+          </div>
+          <div class="card about-side reveal">
+            <h3>왜 미래코칭경영원인가</h3>
+            <p class="section-desc">체계적인 교육, 실습 중심 훈련, 전문코치진, 그리고 교육 이후의 성장 지원까지 한 흐름으로 제공합니다.</p>
+            <div class="grid why-grid">
+              <div class="why-card"><div class="icon-badge">A</div><h4>ACPK 기반 교육</h4><p>전문성과 기준을 갖춘 체계적인 코칭 교육을 제공합니다.</p></div>
+              <div class="why-card"><div class="icon-badge">S</div><h4>실습 중심 커리큘럼</h4><p>실전 코칭 대화와 피드백을 통해 실제 적용 역량을 키웁니다.</p></div>
+              <div class="why-card"><div class="icon-badge">P</div><h4>전문코치진 운영</h4><p>다양한 현장 경험과 전문성을 갖춘 코치진이 함께합니다.</p></div>
+              <div class="why-card"><div class="icon-badge">F</div><h4>사후 멘토코칭 제공</h4><p>교육 이후에도 실습과 멘토링을 통해 성장을 이어갑니다.</p></div>
+            </div>
+            <div class="btn-row" style="margin-top:28px;"><a href="#contact" class="btn btn-primary">교육 상담 받기</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="coaches">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">전문코치</div>
+          <h2>전문성과 경험을 갖춘 코치진이 함께합니다</h2>
+          <p class="section-desc">코칭의 깊이는 코치의 존재와 경험에서 시작됩니다. 개인 성장, 리더십 개발, 조직 변화까지 다양한 주제를 다루는 전문코치진이 함께합니다.</p>
+        </div>
+        <div class="grid coach-grid">
+          <article class="card coach-card reveal" data-name="백성희 대표코치" data-role="ICF PCC / 한국코치협회 KPC / 전문코치 및 기관 대표" data-intro="전문코치 양성과 코칭문화 확산을 위해 활동하며, 코치로서의 정체성과 실천을 함께 세우는 교육을 지향합니다." data-specialty="전문코치 양성, 코칭 교육, 성장 코칭" data-career="기관 운영 및 코칭 교육 리딩, 전문코치 양성 프로그램 운영" data-tools="전문코칭, 멘토코칭, 성장 코칭" data-photo="assets/baek-seonghui.jpg">
+            <img class="avatar" src="assets/baek-seonghui.jpg" alt="백성희 대표코치 프로필 사진" loading="lazy" />
+            <h3 class="coach-name">백성희 대표코치</h3>
+            <div class="coach-role">ICF PCC · 한국코치협회 KPC</div>
+            <p>전문코치 및 기관 대표로서 코치의 정체성과 실천을 함께 세우는 교육을 지향합니다.</p>
+            <div class="coach-meta"><span class="tag">전문코치 양성</span><span class="tag">코칭 교육</span><span class="tag">성장 코칭</span></div>
+          </article>
+          <article class="card coach-card reveal" data-name="신승식 코치" data-role="상담심리학 석사 / 코칭 프로그램 개발" data-intro="심리와 코칭의 접점을 바탕으로 자기이해와 강점 발견, 내적 성장의 변화를 돕습니다." data-specialty="강점 코칭, 자기이해, 진단 기반 성장 코칭" data-career="코칭 프로그램 개발, 상담심리 기반 성장 지원" data-tools="강점, 사진심리, 브레인코드" data-photo="assets/shin-seungsik.jpg">
+            <img class="avatar" src="assets/shin-seungsik.jpg" alt="신승식 코치 프로필 사진" loading="lazy" />
+            <h3 class="coach-name">신승식 코치</h3>
+            <div class="coach-role">상담심리학 석사 · 코칭 프로그램 개발</div>
+            <p>자기이해와 강점 발견을 바탕으로 개인의 내적 성장과 변화 과정을 지원합니다.</p>
+            <div class="coach-meta"><span class="tag">강점 코칭</span><span class="tag">사진심리</span><span class="tag">브레인코드</span></div>
+          </article>
+          <article class="card coach-card reveal" data-name="박세환 코치" data-role="조직/리더십 코칭 / 버크만 및 조직진단" data-intro="조직과 리더의 변화가 실제 현장에서 작동하도록 리더십과 조직문화 관점의 코칭을 제공합니다." data-specialty="조직 코칭, 리더십 코칭, 조직진단" data-career="조직개발 및 리더십 중심 코칭 지원" data-tools="버크만, 조직풍토 진단, 리더십 스타일 진단" data-photo="assets/park-sehwan.jpg">
+            <img class="avatar" src="assets/park-sehwan.jpg" alt="박세환 코치 프로필 사진" loading="lazy" />
+            <h3 class="coach-name">박세환 코치</h3>
+            <div class="coach-role">조직·리더십 코칭</div>
+            <p>리더십과 조직문화 변화가 현장에서 실제로 작동하도록 구조적 코칭을 제공합니다.</p>
+            <div class="coach-meta"><span class="tag">조직 코칭</span><span class="tag">리더십 코칭</span><span class="tag">버크만</span></div>
+          </article>
+          <article class="card coach-card reveal" data-name="최용균 코치" data-role="MBTI / 에니어그램 / NLP / TA 전문" data-intro="성격 이해와 관계 역동에 대한 깊은 통찰을 바탕으로 개인의 성장과 소통 역량 향상을 지원합니다." data-specialty="성격유형 진단, 관계 코칭, 소통 역량 개발" data-career="성격유형 및 커뮤니케이션 기반 코칭 운영" data-tools="MBTI, 에니어그램, NLP, TA" data-photo="assets/choi-yonggyun.jpg">
+            <img class="avatar" src="assets/choi-yonggyun.jpg" alt="최용균 코치 프로필 사진" loading="lazy" />
+            <h3 class="coach-name">최용균 코치</h3>
+            <div class="coach-role">MBTI · 에니어그램 · NLP · TA</div>
+            <p>개인의 성향과 관계 패턴을 이해하고 건강한 소통 역량을 키우는 코칭을 돕습니다.</p>
+            <div class="coach-meta"><span class="tag">MBTI</span><span class="tag">에니어그램</span><span class="tag">TA</span></div>
+          </article>
+        </div>
+        <div class="card cta-banner reveal" style="margin-top:32px;"><div><h3>나에게 맞는 코치를 찾고 싶으신가요?</h3><p>관심 주제와 목표에 맞는 코치 및 프로그램을 안내해드립니다.</p></div><div class="btn-row"><a href="#contact" class="btn btn-primary">코치에게 상담 문의</a></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="program">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">교육과정</div>
+          <h2>실습 중심의 전문코치 양성과정, 코칭 투게더</h2>
+          <p class="section-desc">코칭의 핵심역량과 코치다움을 함께 배우는 실습 중심 프로그램입니다. 이론 이해에 머무르지 않고 실제 코칭 대화와 피드백으로 연결되도록 설계했습니다.</p>
+        </div>
+        <div class="program-layout">
+          <div class="grid" style="gap:24px;">
+            <div class="card program-intro reveal">
+              <h3 class="program-title">코칭 투게더</h3>
+              <p>코칭 핵심역량과 실습 중심의 전문코치 양성과정으로, 코치로서의 태도와 기술, 현장 적용 역량을 균형 있게 기를 수 있도록 구성되었습니다.</p>
+              <div class="grid feature-grid">
+                <div class="card feature-card"><div class="icon-badge">01</div><h4>실무 + 이론 기반</h4><p>현장에서 필요한 실천 역량과 코칭 이론을 함께 다룹니다.</p></div>
+                <div class="card feature-card"><div class="icon-badge">02</div><h4>코치다움 학습</h4><p>기술 이전에 코치의 태도와 존재, 관계의 질을 훈련합니다.</p></div>
+                <div class="card feature-card"><div class="icon-badge">03</div><h4>실습 중심</h4><p>실제 코칭 대화와 피드백을 통해 현장 적용력을 높입니다.</p></div>
+                <div class="card feature-card"><div class="icon-badge">04</div><h4>KAC 자격 취득 지원</h4><p>전문코치로 성장하고자 하는 분들의 준비 방향을 돕습니다.</p></div>
+              </div>
+            </div>
+            <div class="card followup-panel reveal">
+              <h3 class="program-title">교육 이후의 성장도 함께합니다</h3>
+              <p>수료 이후에도 코칭 역량이 실제로 자리 잡을 수 있도록 멘토링과 피드백, 실천 기회를 지속적으로 제공합니다.</p>
+              <div class="followup-list"><div class="followup-item">멘토코칭</div><div class="followup-item">코치더코치</div><div class="followup-item">실습 피드백</div><div class="followup-item">공익코칭 기회</div></div>
+              <div class="btn-row" style="margin-top:24px;"><a href="#contact" class="btn btn-primary">교육 상담 신청</a></div>
+            </div>
+          </div>
+          <div class="card timeline-panel reveal">
+            <h3 class="program-title">커리큘럼 로드맵</h3>
+            <p class="section-desc" style="margin-bottom:20px;">코칭의 이해에서 전문코치되기까지, 핵심 역량을 단계적으로 성장시킵니다.</p>
+            <div class="timeline">
+              <div class="timeline-item"><div class="timeline-dot">1</div><div class="timeline-content"><strong>코칭의 이해</strong><span>코칭의 개념, 철학, 역할 이해</span></div></div>
+              <div class="timeline-item"><div class="timeline-dot">2</div><div class="timeline-content"><strong>코칭역량과 윤리규정</strong><span>전문코치의 기준과 윤리적 실천</span></div></div>
+              <div class="timeline-item"><div class="timeline-dot">3</div><div class="timeline-content"><strong>자기인식</strong><span>코치로서의 자기이해와 성찰</span></div></div>
+              <div class="timeline-item"><div class="timeline-dot">4</div><div class="timeline-content"><strong>자기관리</strong><span>감정·태도·에너지 관리 역량 강화</span></div></div>
+              <div class="timeline-item"><div class="timeline-dot">5</div><div class="timeline-content"><strong>적극경청</strong><span>깊이 듣고 의미를 포착하는 훈련</span></div></div>
+              <div class="timeline-item"><div class="timeline-dot">6</div><div class="timeline-content"><strong>핵심질문</strong><span>성장을 여는 질문 설계와 활용</span></div></div>
+              <div class="timeline-item"><div class="timeline-dot">7</div><div class="timeline-content"><strong>피드백</strong><span>관찰과 통찰을 전하는 코칭 피드백</span></div></div>
+              <div class="timeline-item"><div class="timeline-dot">8</div><div class="timeline-content"><strong>코칭실습</strong><span>실전 중심의 반복 훈련과 리뷰</span></div></div>
+              <div class="timeline-item"><div class="timeline-dot">9</div><div class="timeline-content"><strong>대화모델</strong><span>코칭 대화의 구조와 흐름 이해</span></div></div>
+              <div class="timeline-item"><div class="timeline-dot">10</div><div class="timeline-content"><strong>종합실습</strong><span>실제 세션에 가까운 통합 적용</span></div></div>
+              <div class="timeline-item"><div class="timeline-dot">11</div><div class="timeline-content"><strong>전문코치되기</strong><span>전문코치로서의 성장 방향과 실천 계획 수립</span></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="card cta-banner reveal" style="margin-top:32px;"><div><h3>교육 일정과 과정이 궁금하신가요?</h3><p>수강 목적과 현재 수준에 맞는 과정을 안내해드립니다.</p></div><div class="btn-row"><a href="#contact" class="btn btn-primary">교육 일정 문의하기</a></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="diagnosis">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">진단 및 검사</div>
+          <h2>진단을 통해 나와 조직을 더 깊이 이해합니다</h2>
+          <p class="section-desc">자기이해와 성장의 출발점은 현재를 정확히 보는 것입니다. 개인과 조직의 특성을 입체적으로 이해할 수 있도록 다양한 진단 기반 코칭 서비스를 제공합니다.</p>
+        </div>
+        <div class="diagnosis-tabs reveal">
+          <button class="tab-btn active" data-tab="all">전체</button>
+          <button class="tab-btn" data-tab="personal">개인 성장 진단</button>
+          <button class="tab-btn" data-tab="organization">조직 진단</button>
+        </div>
+        <div class="grid diagnosis-grid" id="diagnosisGrid">
+          <article class="card diagnosis-card reveal" data-category="personal"><span class="diagnosis-type">개인 성장 진단</span><h4>MBTI</h4><p>자신의 선호와 소통 방식을 이해하고 관계와 협업을 더 건강하게 만들고 싶은 분께 적합합니다.</p><p><strong>기대 효과</strong> 자기이해 향상 · 관계 이해 · 의사소통 개선</p><div class="diagnosis-coach">담당 코치: 최용균 코치</div><div class="btn-row"><a href="#contact" class="btn btn-secondary">신청 상담하기</a></div></article>
+          <article class="card diagnosis-card reveal" data-category="personal"><span class="diagnosis-type">개인 성장 진단</span><h4>에니어그램</h4><p>내면의 동기와 반복되는 반응 패턴을 깊이 이해하고 싶은 분께 적합합니다.</p><p><strong>기대 효과</strong> 자기인식 강화 · 감정 이해 · 성장 방향 발견</p><div class="diagnosis-coach">담당 코치: 최용균 코치</div><div class="btn-row"><a href="#contact" class="btn btn-secondary">신청 상담하기</a></div></article>
+          <article class="card diagnosis-card reveal" data-category="personal"><span class="diagnosis-type">개인 성장 진단</span><h4>교류분석(TA)</h4><p>대인관계와 의사소통 패턴을 점검하고 더 건강한 상호작용을 만들고 싶은 분께 적합합니다.</p><p><strong>기대 효과</strong> 관계 패턴 이해 · 소통 방식 개선 · 자기관리 강화</p><div class="diagnosis-coach">담당 코치: 최용균 코치</div><div class="btn-row"><a href="#contact" class="btn btn-secondary">신청 상담하기</a></div></article>
+          <article class="card diagnosis-card reveal" data-category="personal"><span class="diagnosis-type">개인 성장 진단</span><h4>브레인코드</h4><p>개인의 사고와 반응 특성을 바탕으로 효과적인 성장 전략을 찾고 싶은 분께 적합합니다.</p><p><strong>기대 효과</strong> 인지 특성 이해 · 강점 활용 · 변화 전략 수립</p><div class="diagnosis-coach">담당 코치: 신승식 코치</div><div class="btn-row"><a href="#contact" class="btn btn-secondary">신청 상담하기</a></div></article>
+          <article class="card diagnosis-card reveal" data-category="personal"><span class="diagnosis-type">개인 성장 진단</span><h4>Strength5</h4><p>자신의 강점을 발견하고 일과 삶에서 더 잘 활용하고 싶은 분께 적합합니다.</p><p><strong>기대 효과</strong> 강점 발견 · 자신감 향상 · 진로 탐색</p><div class="diagnosis-coach">담당 코치: 신승식 코치</div><div class="btn-row"><a href="#contact" class="btn btn-secondary">신청 상담하기</a></div></article>
+          <article class="card diagnosis-card reveal" data-category="organization"><span class="diagnosis-type">조직 진단</span><h4>조직풍토 진단</h4><p>조직문화와 구성원의 인식 차이를 점검하고 건강한 조직문화를 만들고 싶은 조직에 적합합니다.</p><p><strong>기대 효과</strong> 조직 현황 파악 · 개선 포인트 도출 · 실행 방향 정리</p><div class="diagnosis-coach">담당 코치: 박세환 코치</div><div class="btn-row"><a href="#contact" class="btn btn-secondary">신청 상담하기</a></div></article>
+          <article class="card diagnosis-card reveal" data-category="organization"><span class="diagnosis-type">조직 진단</span><h4>리더십 스타일 진단</h4><p>리더의 영향 방식과 소통 스타일을 진단해 조직 내 리더십 효과를 높이고 싶은 경우에 적합합니다.</p><p><strong>기대 효과</strong> 리더십 인식 확장 · 소통 개선 · 팀 운영 효과성 향상</p><div class="diagnosis-coach">담당 코치: 박세환 코치</div><div class="btn-row"><a href="#contact" class="btn btn-secondary">신청 상담하기</a></div></article>
+          <article class="card diagnosis-card reveal" data-category="organization"><span class="diagnosis-type">조직 진단</span><h4>브레인컬러 진단</h4><p>구성원의 성향과 협업 스타일을 이해하여 팀워크를 높이고 싶은 조직에 적합합니다.</p><p><strong>기대 효과</strong> 협업 이해 · 갈등 예방 · 팀 시너지 강화</p><div class="diagnosis-coach">담당 코치: 신승식 코치</div><div class="btn-row"><a href="#contact" class="btn btn-secondary">신청 상담하기</a></div></article>
+          <article class="card diagnosis-card reveal" data-category="organization"><span class="diagnosis-type">조직 진단</span><h4>버크만</h4><p>개인의 욕구, 스트레스 반응, 직무 스타일을 입체적으로 이해하고 싶은 개인 및 조직에 적합합니다.</p><p><strong>기대 효과</strong> 역할 적합성 이해 · 리더십 개발 · 조직 활용도 향상</p><div class="diagnosis-coach">담당 코치: 박세환 코치</div><div class="btn-row"><a href="#contact" class="btn btn-secondary">신청 상담하기</a></div></article>
+        </div>
+        <div class="card cta-banner reveal" style="margin-top:32px;"><div><h3>어떤 진단이 나에게 맞을지 궁금하신가요?</h3><p>목표와 현재 고민에 맞는 진단 및 코칭 방향을 제안해드립니다.</p></div><div class="btn-row"><a href="#contact" class="btn btn-primary">진단 상담 신청</a></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">추천사</div>
+          <h2>코칭의 변화는 실제 경험에서 시작됩니다</h2>
+          <p class="section-desc">코칭 분야에서는 신뢰와 변화 경험이 중요합니다. 실제 후기 영역을 위한 섹션 구조까지 반영했습니다.</p>
+        </div>
+        <div class="testimonial-wrap">
+          <div class="card testimonial-lead reveal"><h3>“기술을 배우는 것을 넘어,<br />사람을 이해하는 방식이 달라졌습니다.”</h3><p>실습과 피드백이 많아 실제 현장에 적용하는 데 도움이 되도록 설계된 교육 흐름을 담았습니다. 향후 실제 수강생, 내담자, 기업 담당자 후기 데이터로 교체하면 전환율 향상에 더욱 유리합니다.</p></div>
+          <div class="testimonial-grid">
+            <div class="card testimonial-card reveal"><h4>전문코치 양성과정 참여자</h4><p>코칭을 배운다는 것이 단순한 기술 습득이 아니라는 점을 깊이 경험했습니다. 자기이해와 실습이 함께 진행되어 배움의 밀도가 높았습니다.</p><div class="testimonial-meta">예비 전문코치</div></div>
+            <div class="card testimonial-card reveal"><h4>진단 기반 성장 코칭 참여자</h4><p>진단 결과를 통해 나를 더 객관적으로 이해하게 되었고, 커리어와 관계에서 어떤 방향으로 성장해야 할지 명확해졌습니다.</p><div class="testimonial-meta">개인 성장 희망자</div></div>
+            <div class="card testimonial-card reveal"><h4>조직 코칭 및 진단 의뢰 담당자</h4><p>조직문화와 리더십 이슈를 막연하게 느끼고 있었는데, 진단과 코칭을 통해 구체적인 개선 포인트를 도출할 수 있었습니다.</p><div class="testimonial-meta">기업·기관 담당자</div></div>
+          </div>
+        </div>
+        <div class="card cta-banner reveal" style="margin-top:32px;"><div><h3>나의 변화도 지금 시작해보세요</h3><p>교육, 진단, 코칭상담 중 어떤 과정이 적합한지 함께 안내해드립니다.</p></div><div class="btn-row"><a href="#contact" class="btn btn-primary">무료 상담 문의</a></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">문의하기</div>
+          <h2>어떤 과정이 나에게 맞는지 상담 받아보세요</h2>
+          <p class="section-desc">전문코치 양성과정, 진단 및 검사, 코칭상담, 기업교육까지 필요에 맞는 프로그램을 안내해드립니다. 정보를 남겨주시면 확인 후 연락드리겠습니다.</p>
+        </div>
+        <div class="contact-layout">
+          <div class="card contact-info reveal">
+            <h3 style="font-size:1.6rem; margin-bottom:10px;">상담 안내</h3>
+            <p class="section-desc">문의 유형에 맞는 프로그램을 연결해드리며, 교육 목적과 현재 상황에 따라 적합한 코치와 과정을 안내합니다.</p>
+            <div class="contact-points">
+              <div class="contact-point"><strong>이메일</strong><a href="mailto:info2k@daum.net">info2k@daum.net</a></div>
+              <div class="contact-point"><strong>전화</strong><a href="tel:01043382770">010-4338-2770</a></div>
+              <div class="contact-point"><strong>상담 가능 분야</strong>교육과정 · 진단검사 · 코칭상담 · 기업교육</div>
+              <div class="contact-point"><strong>카카오톡 문의</strong><a href="#" aria-label="카카오톡 연결 링크">카카오톡 채널 링크 연결 가능</a></div>
+            </div>
+          </div>
+          <div class="card contact-form-wrap reveal">
+            <h3 style="font-size:1.6rem; margin-bottom:10px;">무료 상담 신청</h3>
+            <p class="section-desc" style="margin-bottom:24px;">아래 정보를 남겨주시면 확인 후 연락드리겠습니다.</p>
+            <form class="contact-form" id="contactForm">
+              <div class="form-grid">
+                <div class="field"><label for="name">이름</label><input id="name" name="name" type="text" placeholder="이름을 입력해 주세요" required /></div>
+                <div class="field"><label for="phone">연락처</label><input id="phone" name="phone" type="tel" placeholder="010-0000-0000" required /></div>
+                <div class="field full"><label for="email">이메일</label><input id="email" name="email" type="email" placeholder="example@email.com" required /></div>
+                <div class="field full"><label for="interest">관심 분야</label><select id="interest" name="interest" required><option value="">관심 분야를 선택해 주세요</option><option value="교육과정">교육과정</option><option value="진단검사">진단검사</option><option value="코칭상담">코칭상담</option><option value="기업교육">기업교육</option></select></div>
+                <div class="field full"><label for="message">문의 내용</label><textarea id="message" name="message" placeholder="관심 있는 과정, 현재 고민, 상담 희망 내용을 작성해 주세요" required></textarea></div>
+              </div>
+              <p class="form-note">문의가 접수되면 지정된 운영 이메일로 전송됩니다. 서버 환경변수와 SMTP 설정 후 바로 사용할 수 있습니다.</p>
+              <div class="form-status" id="formStatus" aria-live="polite"></div>
+              <div class="btn-row"><button type="submit" class="btn btn-primary">무료 상담 신청</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>미래코칭경영원</h3>
+        <p>코치다운 코치를 양성합니다. ACPK 기반 전문 교육과 진단·실습 중심 성장 프로그램.</p>
+      </div>
+      <div class="footer-nav">
+        <a href="#about">회사소개</a>
+        <a href="#coaches">전문코치</a>
+        <a href="#program">교육과정</a>
+        <a href="#diagnosis">진단 및 검사</a>
+        <a href="#contact">문의하기</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="coachModal" aria-hidden="true" role="dialog" aria-labelledby="coachModalTitle">
+    <div class="modal-dialog">
+      <button class="modal-close" id="modalClose" aria-label="팝업 닫기">×</button>
+      <div class="modal-top">
+        <img class="modal-avatar" id="modalAvatar" src="assets/baek-seonghui.jpg" alt="코치 프로필 사진" />
+        <div>
+          <h3 id="coachModalTitle" style="font-size:1.7rem; margin-bottom:8px;">코치명</h3>
+          <p id="modalRole" style="color:var(--primary); font-weight:700;"></p>
+          <p id="modalIntro" style="margin-top:12px; color:var(--muted);"></p>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section"><h4>전문 분야</h4><p id="modalSpecialty"></p></div>
+        <div class="modal-section"><h4>대표 경력</h4><p id="modalCareer"></p></div>
+        <div class="modal-section"><h4>주요 진단 도구</h4><div class="modal-tags" id="modalTools"></div></div>
+        <div class="btn-row"><a href="#contact" class="btn btn-primary" id="modalCTA">코치에게 상담 문의</a></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => {
+        const isOpen = mobileDrawer.classList.toggle('open');
+        mobileToggle.classList.toggle('open', isOpen);
+        mobileToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+    document.querySelectorAll('.mobile-drawer a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileDrawer.classList.remove('open');
+        mobileToggle.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    const navLinks = document.querySelectorAll('.nav a');
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const activateNav = () => {
+      const scrollY = window.scrollY + 120;
+      let currentId = '';
+      sections.forEach(section => {
+        if (scrollY >= section.offsetTop && scrollY < section.offsetTop + section.offsetHeight) currentId = section.id;
+      });
+      navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`));
+    };
+    window.addEventListener('scroll', activateNav);
+    activateNav();
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => revealObserver.observe(el));
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const diagnosisCards = document.querySelectorAll('.diagnosis-card');
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        tabButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        diagnosisCards.forEach(card => {
+          const match = tab === 'all' || card.dataset.category === tab;
+          card.style.display = match ? 'flex' : 'none';
+        });
+      });
+    });
+    const coachCards = document.querySelectorAll('.coach-card');
+    const coachModal = document.getElementById('coachModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalAvatar = document.getElementById('modalAvatar');
+    const modalTitle = document.getElementById('coachModalTitle');
+    const modalRole = document.getElementById('modalRole');
+    const modalIntro = document.getElementById('modalIntro');
+    const modalSpecialty = document.getElementById('modalSpecialty');
+    const modalCareer = document.getElementById('modalCareer');
+    const modalTools = document.getElementById('modalTools');
+    const openModal = (card) => {
+      const name = card.dataset.name || '';
+      modalAvatar.src = card.dataset.photo || 'assets/baek-seonghui.jpg';
+      modalAvatar.alt = `${name} 프로필 사진`;
+      modalTitle.textContent = name;
+      modalRole.textContent = card.dataset.role || '';
+      modalIntro.textContent = card.dataset.intro || '';
+      modalSpecialty.textContent = card.dataset.specialty || '';
+      modalCareer.textContent = card.dataset.career || '';
+      modalTools.innerHTML = '';
+      (card.dataset.tools || '').split(',').map(v => v.trim()).filter(Boolean).forEach(tool => {
+        const tag = document.createElement('span');
+        tag.className = 'tag';
+        tag.textContent = tool;
+        modalTools.appendChild(tag);
+      });
+      coachModal.classList.add('show');
+      coachModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeModal = () => {
+      coachModal.classList.remove('show');
+      coachModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+    coachCards.forEach(card => {
+      card.addEventListener('click', () => openModal(card));
+      card.addEventListener('keypress', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal(card);
+        }
+      });
+      card.setAttribute('tabindex', '0');
+    });
+    modalClose.addEventListener('click', closeModal);
+    coachModal.addEventListener('click', (e) => { if (e.target === coachModal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && coachModal.classList.contains('show')) closeModal(); });
+    const form = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const payload = Object.fromEntries(formData.entries());
+      if (!payload.name || !payload.phone || !payload.email || !payload.interest || !payload.message) {
+        formStatus.textContent = '필수 항목을 모두 입력해 주세요.';
+        formStatus.className = 'form-status error';
+        return;
+      }
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(payload.email)) {
+        formStatus.textContent = '올바른 이메일 형식을 입력해 주세요.';
+        formStatus.className = 'form-status error';
+        return;
+      }
+      formStatus.textContent = '문의 내용을 전송하고 있습니다...';
+      formStatus.className = 'form-status';
+      try {
+        const response = await fetch('/api/inquiry', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json();
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || '문의 전송에 실패했습니다.');
+        }
+        formStatus.textContent = '상담 신청이 완료되었습니다. 빠르게 연락드리겠습니다.';
+        formStatus.className = 'form-status success';
+        form.reset();
+      } catch (error) {
+        formStatus.textContent = error.message || '전송 중 문제가 발생했습니다. 잠시 후 다시 시도해 주세요.';
+        formStatus.className = 'form-status error';
+      }
+    });
+  </script>
+</body>
+</html>
