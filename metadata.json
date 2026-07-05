@@ -1,0 +1,6 @@
+{
+  "name": "미래코칭경영원",
+  "description": "한국코치협회 ACPK 기반 전문코치 양성 교육, 실습 중심 코칭 프로그램, 진단 및 검사 기반 성장 지원을 제공하는 미래코칭경영원 공식 웹사이트입니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

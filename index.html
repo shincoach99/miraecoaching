@@ -905,6 +905,32 @@
     </div>
   </div>
 
+  <!-- Promotion Poster Popup Modal -->
+  <div class="modal" id="posterPopupModal" aria-hidden="true" role="dialog" aria-labelledby="posterPopupTitle">
+    <div class="modal-dialog" style="width: min(94%, 440px); border-radius: 16px; overflow: hidden; background: #ffffff; box-shadow: 0 24px 60px rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column;">
+      <div style="position: relative; line-height: 0; background: #eaeaea; display: flex; justify-content: center; align-items: center;">
+        <img src="2026acpkposter.jpg" alt="2026 ACPK 교육 모집 포스터" style="width: 100%; height: auto; max-height: 72vh; object-fit: contain; display: block;" onerror="this.style.display='none'; document.getElementById('posterFallbackText').style.display='block';" />
+        <!-- Fallback styling in case image fails to load -->
+        <div id="posterFallbackText" style="display: none; padding: 40px 20px; text-align: center; color: #133827; background: #f4faf6; font-size: 1rem; line-height: 1.6; font-weight: 700; width: 100%;">
+          <span style="font-size: 2.5rem; display: block; margin-bottom: 12px;">📅</span>
+          (사)한국코치협회 인증과정<br>
+          <strong style="font-size: 1.3rem; color: #b48520;">"코칭 투게더 1기"</strong><br>
+          교육생 대모집!<br>
+          <span style="font-size: 0.85rem; font-weight: normal; color: #666; display: block; margin-top: 8px;">(포스터 이미지 로딩에 실패했습니다)</span>
+        </div>
+      </div>
+      <div style="background: #133827; color: #fff; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.08); font-family: sans-serif;">
+        <label style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 500; font-size: 0.9rem; color: #dfb45b; user-select: none;">
+          <input type="checkbox" id="hideTodayCheckbox" style="accent-color: #dfb45b; width: 16px; height: 16px; cursor: pointer;" />
+          오늘 그만 보기
+        </label>
+        <button id="closePosterBtn" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); color: #ffffff; font-weight: 700; font-size: 0.88rem; cursor: pointer; padding: 6px 14px; border-radius: 8px; transition: all 0.2s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+          닫기
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script>
     const mobileToggle = document.getElementById('mobileToggle');
     const mobileDrawer = document.getElementById('mobileDrawer');
@@ -1223,6 +1249,52 @@
         regStatus.className = 'form-status error';
       }
     });
+
+    // -- Promotion Poster Popup Modal Logic --
+    const posterPopupModal = document.getElementById('posterPopupModal');
+    const hideTodayCheckbox = document.getElementById('hideTodayCheckbox');
+    const closePosterBtn = document.getElementById('closePosterBtn');
+
+    const checkAndShowPoster = () => {
+      const todayString = new Date().toDateString();
+      const hideDate = localStorage.getItem('hidePosterDate');
+      if (hideDate !== todayString) {
+        posterPopupModal.classList.add('show');
+        posterPopupModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+    };
+
+    const closePosterModal = () => {
+      if (hideTodayCheckbox && hideTodayCheckbox.checked) {
+        const todayString = new Date().toDateString();
+        localStorage.setItem('hidePosterDate', todayString);
+      }
+      posterPopupModal.classList.remove('show');
+      posterPopupModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    if (closePosterBtn) {
+      closePosterBtn.addEventListener('click', closePosterModal);
+    }
+    if (posterPopupModal) {
+      posterPopupModal.addEventListener('click', (e) => {
+        if (e.target === posterPopupModal) {
+          closePosterModal();
+        }
+      });
+    }
+
+    // Add Esc key support for closing the poster popup
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && posterPopupModal.classList.contains('show')) {
+        closePosterModal();
+      }
+    });
+
+    // Initialize checking after a brief sub-second delay for smooth loading
+    setTimeout(checkAndShowPoster, 300);
   </script>
 </body>
 </html>
